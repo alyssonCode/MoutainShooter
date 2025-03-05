@@ -15,7 +15,7 @@ while True:
             # Como quero pegar um evento específico,
             # setei para pegar apenas o fechamento de janela
             # com a variável "QUIT" presente no pygame
-            print('Teste') # print teste
+            print('Quitting...') # print teste
             pygame.quit() # Quando o "QUIT" ocorrer é para dar o comando "pygame.quit()", fechar janela
             quit() # Deve ainda, sair do pygame, como o "quit()"
 
