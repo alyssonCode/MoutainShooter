@@ -17,8 +17,8 @@ class Menu:
         # Obtém o retângulo da superfície (imagem), com a posição de topo e esquerda definidas para 0
         self.rect = self.surf.get_rect(left=0, top=0)  # Define a posição da imagem no topo esquerdo da tela
 
-    def run(self, menu_option=None):
-
+    def run(self, ):
+        menu_option = 0
         pygame.mixer_music.load('./assets/Menu.mp3')  # importar a música
         pygame.mixer_music.play(-1)  # tocar a música o -1 é para ela ficar em loop
 
@@ -26,7 +26,6 @@ class Menu:
 
             # Desenha a imagem carregada na janela do jogo, usando a posição definida por rect
             self.window.blit(source=self.surf, dest=self.rect) # a ordem aqui é muito importe, se inverter não aparece o texto
-
             self.menu_text(50, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70)) # Escreve o títuto do jogo
             self.menu_text(50, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 120)) # Escreve o títuto do jogo
 
@@ -35,6 +34,7 @@ class Menu:
                     self.menu_text(20, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 25 * i))
                 else:
                     self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 25 * i))
+
             pygame.display.flip()
 
             # Atualiza a tela para refletir as mudanças
