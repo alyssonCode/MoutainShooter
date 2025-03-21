@@ -93,13 +93,13 @@ ENTITY_SCORE = {
     'Level2Bg3': 0,
     'Level2Bg4': 0,
     'Player1': 0,
-    'Player1Shot': 0,
+    'Player1Shot': 1,
     'Player2': 0,
-    'Player2Shot': 0,
+    'Player2Shot': 1,
     'Enemy1': 100,
-    'Enemy1Shot': 0,
+    'Enemy1Shot': 1,
     'Enemy2': 125,
-    'Enemy2Shot': 0,
+    'Enemy2Shot': 1,
 }
 
 ENTITY_SHOT_DELAY = {
