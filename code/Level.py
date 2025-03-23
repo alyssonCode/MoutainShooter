@@ -8,7 +8,8 @@ import pygame.display
 from pygame.rect import Rect
 from pygame.surface import Surface
 
-from code.Const import C_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, EVENT_TIMEOUT, TIMEOUT_STEP
+from code.Const import C_WHITE, WIN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, EVENT_TIMEOUT, TIMEOUT_STEP, C_GREEN, \
+    C_CYAN
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -49,6 +50,11 @@ class Level:
                     if shoot is not None:
                         self.entity_list.append(shoot)
 
+                if ent.name == 'Player1':
+                    self.level_text(14, f'Payer1 - Health: {ent.health} | Score: {ent.score}', C_GREEN, (10, 25))
+                if ent.name == 'Player2':
+                    self.level_text(14, f'Payer2 - Health: {ent.health} | Score: {ent.score}', C_CYAN, (10, 45))
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -56,6 +62,8 @@ class Level:
                 if event.type == EVENT_ENEMY:
                     choice = random.choice(('Enemy1', 'Enemy2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
+
+
 
             # printed text
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', C_WHITE, (10, 5))
